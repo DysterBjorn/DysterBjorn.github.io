@@ -4,7 +4,7 @@ body{color: white;
 	background: #392e5c;
 	font-family: 'K2D', sans-serif;}
 header{background: black; text-align: left;}
-footer{background: black;font-size: 12px;}
+footer{background: black; font-size: 12px; text-align: left;}
 .logo{width: 100px;padding: 10px;}
 .Chibi{width: 25%;}
 .twitch{color: white; font-size: 50px;}
