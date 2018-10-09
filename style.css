@@ -1,10 +1,12 @@
+html{min-height: 100%; position: relative;}
 h1{color: white;}
 body{color: white;
 	text-align: center;
 	background: #392e5c;
-	font-family: 'K2D', sans-serif;}
+	font-family: 'K2D', sans-serif;
+	margin: 0 0 50px}
 header{background: black; text-align: left;}
-footer{background: black; font-size: 12px; text-align: left; padding: 5px; position: fixed; left:0; bottom:0; width:100%;}
+footer{background: black; height: 30px; text-align: left; position: absolute; left: 0; bottom: 0; width:100%; overflow: hidden;}
 .logo{width: 100px;padding: 10px;}
 .Chibi{width: 25%;}
 .twitch{color: white; font-size: 50px;}
