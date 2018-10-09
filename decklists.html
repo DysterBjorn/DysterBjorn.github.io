@@ -8,6 +8,11 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link href="https://fonts.googleapis.com/css?family=K2D:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <meta name="twitter:description" content="Share your Hearthstone decks on Deck.codes!" />
+    <meta name="twitter:image" content="https://deck.codes/_/img/logo.png" />
+    <meta name="twitter:image:alt" content="Hearthstone Deck Codes" />
+    <link rel="shortcut icon" type="png" href="Images/Logo_DB.png"/>
 </head>
 <body>
 	<header>
@@ -27,6 +32,71 @@
 		</ul>
 	</header>
 	<h1> Retrouve ici mes différentes decklists</h1>
+<main>
+    <div id="main-inner" class="mdc-toolbar-fixed-adjust">
+
+        <section id="section-home-input">
+            <div id="deck-code-textfield" class="home-deck-code-input mdc-textfield">
+                <textarea id="deck-code-input" class="mdc-textfield__input mdc-textfield--multiline"
+                          placeholder="Colle le code du deck ici..."></textarea>
+            </div>
+            <div id="deck-code-view-btn-container">
+                <button id="deck-code-view-btn" class="mdc-button mdc-button--raised mdc-button--primary">
+                    Voir le deck
+                </button>
+            </div>
+        </section>
+    </div>
+</main>
+<script src="https://unpkg.com/material-components-web@0.11.1/dist/material-components-web.min.js"></script>
+<script>
+    window.mdc.autoInit();
+</script>
+<script>
+    (function() {
+        var deckCodeInputEl = document.getElementById("deck-code-input");
+        document.getElementById("deck-code-view-btn").addEventListener('click', function() {
+            var deckCodeInput = (deckCodeInputEl.value || "");
+            var lines = deckCodeInput.split("\n");
+            var deckTitle = "";
+            var deckCode = "";
+            for(var i = 0; i < lines.length; i++) {
+                var line = lines[i];
+                if(line.startsWith("### ")){
+                    deckTitle = encodeURIComponent(line.substring(4));
+                    continue;
+                }
+                if(line.startsWith("# ")){
+                    
+                    continue;
+                }
+                deckCode = line.replace(/[^a-zA-Z0-9/+=]/g, "");
+                
+                if (deckCode === "") {
+                    continue;
+                }
+                
+                break;
+            }
+
+            window.console.log("Deck code: "+deckCodeInput);
+            if(deckCode === "") {
+                window.console.log("Invalid deck code entered! Ignoring it.");
+                return;
+            }
+
+            window.console.log("Opening deck: "+window.location.host + "/" + deckCode);
+
+            if(deckTitle !== "") {
+                window.location.href = window.location.protocol + "//" + window.location.host + "/" + deckTitle + "~" + deckCode;
+            } else {
+                window.location.href = window.location.protocol + "//" + window.location.host + "/" + deckCode;
+            }
+
+        }, false);
+
+    })();
+</script>
 	<footer>
 		TEST
 	</footer>
