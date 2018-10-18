@@ -19,11 +19,8 @@ aside{float: right;width: 50%;}
 .menu{color:white; font-size: 24px; background-color: black; border: none;text-decoration: none; padding: 10px;}
 .menu:hover{background-color: white;color: black;text-decoration: none;}
 .results{list-style-type: disc; text-align: left;}
-.footerDel{color: white; text-decoration: none; font-size: 28px;}
-.footerDel:hover{color:grey;text-shadow: 50%}
 .footlinks{color: white; text-decoration: none;float:right;font-size: 32px; margin: 10px}
 .footlinks:hover{color: grey;}
-.logodel{width:5%;}
 .HSlogo{width:3%;}
 .logoclass{width:5%; margin: 3px;}
 .logoclass:hover{opacity: 0.7}
